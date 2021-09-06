@@ -1,0 +1,22 @@
+{
+  "name": "typescript-examples",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pero5ar/typescript-examples.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pero5ar/typescript-examples/issues"
+  },
+  "homepage": "https://github.com/pero5ar/typescript-examples#readme",
+  "dependencies": {
+    "typescript": "^4.4.2"
+  }
+}
