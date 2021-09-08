@@ -2,8 +2,9 @@
     "compilerOptions": {
         "module": "commonjs",
         "target": "es2020",
-        "jsx": "preserve",
+        "jsx": "react",
         "strictFunctionTypes": true,
+        "strictNullChecks": true,
         "sourceMap": true
     },
     "exclude": [

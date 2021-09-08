@@ -17,6 +17,10 @@
   },
   "homepage": "https://github.com/pero5ar/typescript-examples#readme",
   "dependencies": {
+    "react": "^17.0.2",
     "typescript": "^4.4.2"
+  },
+  "devDependencies": {
+    "@types/react": "^17.0.20"
   }
 }
