@@ -1,6 +1,13 @@
 // # Unions and Intersections
 
 
+// ---
+
+// SLIDE
+
+// ---
+
+
 // ## Basic example
 
 type SingleDigitPrime = 2 | 3 | 5 | 7;
@@ -11,6 +18,13 @@ type SingleDigitPrimeOrOdd = SingleDigitPrime | SingleDigitOdd;
 
 type SingleDigitPrimeAndOdd = SingleDigitPrime & SingleDigitOdd;
 // result: 3 | 5 | 7
+
+
+// ---
+
+// SLIDE
+
+// ---
 
 
 // ## Object union
@@ -39,7 +53,14 @@ function payTaxes(entity: Human | Company): void {
 }
 
 
-// # Object intersection
+// ---
+
+// SLIDE
+
+// ---
+
+
+// ## Object intersection
 
 interface DbModel { id: number; }
 type ChildObject = { parentId: number; };
@@ -52,6 +73,13 @@ function addChild(parentId: number, child: DbModel): ChildDbModel {
         parentId,
     }
 }
+
+
+// ---
+
+// SLIDE
+
+// ---
 
 
 // ## Narrowing down types with intersections
@@ -84,12 +112,26 @@ const chicken: Bird = {
 };
 
 
+// ---
+
+// SLIDE
+
+// ---
+
+
 // ## Side note: optional is not the same as undefined
 
 let _obj7: { a?: string } = {};
 
 // let _obj7: { a: string | undefined } = {};
 // result: Property 'a' is missing in type '{}' but required in type '{ a: string | undefined; }'.ts(2741)
+
+
+// ---
+
+// SLIDE
+
+// ---
 
 
 // ## interface extends
@@ -109,6 +151,13 @@ const chicken2: Bird2 = chicken;
 // result: An interface can only extend an object type or intersection of object types with statically known members.ts(2312)
 
 
+// ---
+
+// SLIDE
+
+// ---
+
+
 // ## A "real" union of objects
 
 // Goal: shared types are required and individual ones are optional
@@ -121,6 +170,13 @@ function payTaxes2(entity: LegalEntity): void {
     const name: string = entity.companyName ?? ((entity.firstName ?? '') + ' ' + (entity.lastName ?? ''));
     // other stuff...
 }
+
+
+// ---
+
+// SLIDE
+
+// ---
 
 
 // ## Side note: JS nullish coalescing && optional chaining
@@ -139,3 +195,81 @@ function new_getChildId(parent: any): number | null {
 
 globalThis.notSureIfThisFunctionExists?.();
 
+
+// ---
+
+// SLIDE
+
+// ---
+
+
+// ## Function overloads
+
+function len(s: string): number;
+function len(arr: any[]): number;
+
+function len(x: string | any[]) {
+    return x.length;
+}
+
+len('string');
+len([1, 2, 3]);
+
+
+// ---
+
+// SLIDE
+
+// ---
+
+
+// ## Overloading arrow functions
+
+type Len2 = {
+    (s: string): number;
+    (arr: any[]): number;
+}
+let len2: Len2 = (x: string | any[]) => x.length;
+
+len2('string');
+len2([1, 2, 3]);
+
+
+// ---
+
+// SLIDE
+
+// ---
+
+
+// ## Overloading arrow functions v2
+
+type Len3 = ((s: string) => number) & ((arr: any[]) => number);
+let len3: Len3 = (x: string | any[]) => x.length;
+
+len3('string');
+len3([1, 2, 3]);
+
+
+// ---
+
+// SLIDE
+
+// ---
+
+
+// ## Side note: If you ever need to type `this`
+
+function socketController(this: SocketControllerContext, socket: any, data: any, ack?: () => void) {
+    const activeConnection = this.activeConnectionsRepository.findBySocket(socket);
+    // ...
+}
+
+type SocketControllerContext = { activeConnectionsRepository: { findBySocket(socket: any): any }; };
+
+
+// ---
+
+// NEXT
+
+// ---

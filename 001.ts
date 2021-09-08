@@ -1,6 +1,13 @@
 // # Types 101
 
 
+// ---
+
+// SLIDE
+
+// ---
+
+
 // ## JS Primitives
 
 let _number: number = 1;
@@ -13,6 +20,13 @@ let _undefined: undefined = undefined;
 let _null: null = null;
 
 
+// ---
+
+// SLIDE
+
+// ---
+
+
 // ## Objects
 
 let _obj1: object = { a: 'value' }; // don't, any non primitive
@@ -23,6 +37,13 @@ let _obj5: { a: string; } = { a: 'value' };
 
 type UnknownObject = Record<string, unknown>;
 let _obj6: UnknownObject = { a: 'value' };
+
+
+// ---
+
+// SLIDE
+
+// ---
 
 
 // ## Functions
@@ -39,6 +60,13 @@ let _fun6: {} = (x) => x++;
 // Bur now needs cast to call:
 let _callableFun5 = _fun5 as Function;
 _callableFun5();
+
+
+// ---
+
+// SLIDE
+
+// ---
 
 
 // ## Any, unknown, never
@@ -67,6 +95,13 @@ function throwError(msg: string): never {
 }
 
 
+// ---
+
+// SLIDE
+
+// ---
+
+
 // ## Literals
 
 let _true: true = true;
@@ -80,6 +115,13 @@ type LowercaseHttpVerbs = 'get' | 'head' | 'post' | 'put' | 'patch' | 'delete';
 type HttpVerbs = LowercaseHttpVerbs | Uppercase<LowercaseHttpVerbs>;
 // result: LowercaseHttpVerbs | "GET" | "HEAD" | "POST" | "PUT" | "PATCH" | "DELETE"
 // see: Uppercase, Lowercase, Capitalize, Uncapitalize
+
+
+// ---
+
+// SLIDE
+
+// ---
 
 
 // ## Arrays and tuples
@@ -96,3 +138,11 @@ let _tuple3: [string, number, string?] = ['val1', 2];
 let _tuple4: [string, ...number[]] = ['val1', 2, 3, 4];
 let _tuple5: [string, ...number[], string] = ['val1', 2, 3, 4, 'val5']; // TS >= 4.2
 let _tuple6: [first: string, second: string] = ['val1', 'val2'];
+
+
+// ---
+
+// NEXT
+
+// ---
+

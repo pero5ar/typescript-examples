@@ -1,6 +1,13 @@
 // # TS Language Extensions
 
 
+// ---
+
+// SLIDE
+
+// ---
+
+
 // ## Type vs interface
 
 // Basically the same thing since TS 2.7
@@ -40,6 +47,13 @@ _myObject!.b // string
 // Please use interfaces when writing libraries
 
 
+// ---
+
+// SLIDE
+
+// ---
+
+
 // ## enums
 
 enum StandardIOStream {
@@ -66,6 +80,13 @@ enum Direction {
 Object.entries(Direction).length // 4
 
 
+// ---
+
+// SLIDE
+
+// ---
+
+
 // ## keyof, typeof
 
 interface Person {
@@ -80,6 +101,13 @@ let _john = { firstName: 'John', lastName: 'Smith' }
 type Person2 = typeof _john; // { firstName: string; lastName: string; }
 
 
+// ---
+
+// SLIDE
+
+// ---
+
+
 // ## Using typeof instead of copy paste
 
 declare function oddlySpecificDeepCopyAsync(
@@ -87,9 +115,26 @@ declare function oddlySpecificDeepCopyAsync(
 ): Promise<typeof data>
 
 
+// ---
+
+// SLIDE
+
+// ---
+
+
 // ## Get type from array
 
-let _mixedArray = [1, 'something', null, 'literalString' as const]
+let _mixedArray = [1, 'something', null, [1, 2]];
+
+type MixedArrayElement = (typeof _mixedArray)[number];
+// type MixedArrayElement = string | number | number[] | null
+
+
+// ---
+
+// SLIDE
+
+// ---
 
 
 // ## Constructing objects via keyof
@@ -103,6 +148,13 @@ let _nameUseLookup: NameUseLookup = {
     'John': { firstName: true, middleName: true },
     'Smith': { lastName: true }
 }
+
+
+// ---
+
+// SLIDE
+
+// ---
 
 
 // ## Using them on enums
@@ -121,6 +173,13 @@ const standardIOStreamDict: StandardIOStreamDict = {
 }
 
 
+// ---
+
+// SLIDE
+
+// ---
+
+
 // ## as const
 
 let _john2 = { firstName: 'John', lastName: 'Smith' } as const;
@@ -130,6 +189,13 @@ type JohnSmith = typeof _john2;
 
 // _john2.firstName = ''
 // result: Cannot assign to 'firstName' because it is a read-only property.ts(2540)
+
+
+// ---
+
+// SLIDE
+
+// ---
 
 
 // ## readonly

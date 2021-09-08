@@ -1,7 +1,14 @@
-// # Generics & functions
+// # Generics
 
 
-// ## Generics
+// ---
+
+// SLIDE
+
+// ---
+
+
+// ## Syntax
 
 function genericFunction<T>(arg: T): T {
     return arg;
@@ -24,6 +31,13 @@ type GenericType<T> = { arg: T };
 let _numberObjectAsType: GenericType<number> = _numberObject;
 
 
+// ---
+
+// SLIDE
+
+// ---
+
+
 // ## Generic Constraints
 
 function deepCopyObject<T extends object>(obj: T): T {
@@ -37,6 +51,13 @@ let _numberObjectCopy = deepCopyObject(_numberObject);
 // result: Argument of type 'number' is not assignable to parameter of type 'object'.ts(2345)
 
 
+// ---
+
+// SLIDE
+
+// ---
+
+
 // ## How to type a class?
 
 function createObject<T extends object, CArgs extends any[]>(
@@ -48,6 +69,13 @@ function createObject<T extends object, CArgs extends any[]>(
 
 let _numberObject2 = createObject(GenericClass, [1]);
 // let _numberObject2: GenericClass<number>
+
+
+// ---
+
+// SLIDE
+
+// ---
 
 
 // ## Default values & React usage
@@ -84,18 +112,16 @@ let Element = ({ opts1, opts2 }: { opts1: string[], opts2: number[] }) => {
 }
 
 
-// ## Function overloads
+// ---
 
-function len(s: string): number;
-function len<T>(arr: T[]): number;
+// NEXT
 
-function len(x: string | any[]) {
-  return x.length;
-}
+// ---
 
-len('string');
-len([1, 2, 3]);
 
-len([1, 2, 'random string', [1, 2]]);
-// function len<string | number | number[]>(arr: (string | number | number[])[]): number
+// ## FORMAT FIX: the _ is not working in tsx
 
+_numberObjectAsInterface
+_numberObjectAsType
+_numberObjectCopy
+_numberObject2
