@@ -76,7 +76,7 @@ function getA1(obj: any) {
 }
 
 function getA2(obj: unknown) {
-    // return obj.a; -> Property 'a' does not exist on type 'unknown'.ts(2339)
+    // obj.a; // -> Property 'a' does not exist on type 'unknown'.ts(2339)
     if (isObjWithA(obj)) {
         // obj is { a: unknown } in this block
         obj.a;

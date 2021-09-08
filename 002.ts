@@ -90,7 +90,8 @@ type Quadrupedal = { usesFourLegs: true; usesTwoLegs: false; };
 type Dinosaur = (Bipedal | Quadrupedal) & {
     laysEggs: true;
     haveFeathers?: boolean;
-    canFly?: boolean; warmBlooded?: boolean
+    canFly?: boolean;
+    warmBlooded?: boolean;
 };
 
 type Theropod = Dinosaur & Bipedal;
@@ -123,7 +124,7 @@ const chicken: Bird = {
 
 let _obj7: { a?: string } = {};
 
-// let _obj7: { a: string | undefined } = {};
+// let _obj8: { a: string | undefined } = {};
 // result: Property 'a' is missing in type '{}' but required in type '{ a: string | undefined; }'.ts(2741)
 
 
