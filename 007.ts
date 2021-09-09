@@ -101,7 +101,9 @@ type ImmutableObject<T> = { readonly [K in keyof T]: Immutable<T[K]> };
  * };
  * type ResultType = KeyOfType<ExampleType, 'x'>; // "a" | "b" | "c" | "d" | "e"
  */
-declare type KeyOfType<T, Type> = { [K in keyof T]: T[K] extends Type ? K : never}[keyof T];
+declare type KeyOfType<T, Type> = {
+    [K in keyof T]: T[K] extends Type ? K : never
+}[keyof T];
 
  /**
   * Get all keys of `T` that are assignable to `Type`.
@@ -118,7 +120,9 @@ declare type KeyOfType<T, Type> = { [K in keyof T]: T[K] extends Type ? K : neve
   * };
   * type ResultType = KeyWithType<ExampleType, 'x'>; // "a" | "b" | "c" | "d" | "f"
   */
-declare type KeyWithType<T, Type> = { [K in keyof T]: Type extends T[K] ? K : never}[keyof T];
+declare type KeyWithType<T, Type> = {
+    [K in keyof T]: Type extends T[K] ? K : never
+}[keyof T];
 
 
 // ---

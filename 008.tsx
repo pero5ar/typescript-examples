@@ -69,7 +69,7 @@ interface OwnProps {
     id: number;
 }
 
-function mapStateToProps<T>(rootState: RootStoreState, ownProps: OwnProps) {
+function mapStateToProps(rootState: RootStoreState, ownProps: OwnProps) {
     return {
         value: rootState.targetReducer.lookup[ownProps.id]
     }

@@ -36,7 +36,7 @@ let _myObject: ObjectInterface;
 _myObject!.a // string
 _myObject!.b // string
 
-// Side note: Notice the `!` part, use it wisely
+// Side note: Notice the `!` operator, use it wisely
 
 // This throws an error:
 // type ObjectType = {

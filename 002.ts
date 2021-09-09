@@ -39,7 +39,8 @@ declare function verifyOIB(oib: string): boolean;
 
 function payTaxes(entity: Human | Company): void {
     verifyOIB(entity.oib);
-    // entity.companyName; -> Property 'companyName' does not exist on type 'Human'.ts(2339)
+    // entity.companyName;
+    // result: Property 'companyName' does not exist on type 'Human'.ts(2339)
 
     let name: string;
     if ('companyName' in entity) {
