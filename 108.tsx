@@ -1,4 +1,4 @@
-// # A few extra Tips
+// # A Few Extra Tips
 
 
 // ---
