@@ -1,7 +1,9 @@
 # typescript-examples
 Examples for a typescript lecture.
 
-Typescript version 4 is expected, but most examples work on props versions as well
+Typescript version `^4.2` is expected, but almost all examples work on any `4.x` version, and most work on `>= 3.7`.
+
+### 
 
 Resources:
  - [Handbook](https://www.typescriptlang.org/docs/handbook/intro.html)
